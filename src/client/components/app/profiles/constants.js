@@ -1,0 +1,6 @@
+const ProfilesConstants = {
+  CHANGE_VALUE: 'PROFILES_CONSTANTS.CHANGE_VALUE',
+  SEARCH_USERS: 'PROFILES_CONSTANTS.SEARCH_USERS'
+};
+
+export { ProfilesConstants}

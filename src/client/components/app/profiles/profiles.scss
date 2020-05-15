@@ -1,0 +1,53 @@
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+.profiles-root {
+  text-align: center;
+}
+
+.profiles-header {
+  background-color: #222;
+  padding: 10px;
+  color: white;
+  font-size: 20pt;
+}
+
+.profiles-input {
+  line-height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 0 8px;
+  color: #666;
+  width: 400px;
+  margin-bottom: 30px;
+}
+
+.profiles-button {
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 0 8px;
+  color: #666;
+  width: 120px;
+  margin-bottom: 30px;
+}
+
+
+// profile scroll
+.profile-scroll .p-scrollpanel-wrapper {
+  border-right: 9px solid #f4f4f4;
+}
+
+.profile-scroll .p-scrollpanel-bar {
+  background-color: #1976d2;
+  opacity: 1;
+  transition: background-color .3s;
+}
+
+.profile-scroll .p-scrollpanel-bar:hover {
+  background-color: #135ba1;
+}

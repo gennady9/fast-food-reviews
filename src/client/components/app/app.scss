@@ -1,0 +1,55 @@
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+.content-container {
+  margin-top: 5px;
+}
+
+//
+.app-root {
+  height:100vh; 
+  background-image: url(https://image.freepik.com/free-photo/close-up-blank-old-concrete-wall_23-2147856094.jpg);
+  // background-image: url(https://www199.lunapic.com/editor/do-sharp.php?preview=1&bright=-8&rand=3145);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.app-content {
+  text-align: left;
+}
+
+.mr-auto {
+  font-size: -webkit-xxx-large;
+}
+
+//
+//.app-header {
+//  background-color: #222;
+//  padding: 10px;
+//  color: white;
+//  font-size: 20pt;
+//}
+//
+//.app-input {
+//  line-height: 30px;
+//  border: 1px solid #ccc;
+//  border-radius: 4px;
+//  font-size: 14px;
+//  padding: 0 8px;
+//  color: #666;
+//  width: 400px;
+//  margin-bottom: 30px;
+//}
+//
+//.app-button {
+//  height: 30px;
+//  border: 1px solid #ccc;
+//  border-radius: 4px;
+//  font-size: 14px;
+//  padding: 0 8px;
+//  color: #666;
+//  width: 120px;
+//  margin-bottom: 30px;
+//}

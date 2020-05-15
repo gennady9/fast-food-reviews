@@ -1,0 +1,41 @@
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+.restaurants-root {
+  text-align: center;
+}
+
+.restaurants-header {
+  background-color: rgba(37, 29, 29, 0.815);
+  padding: 20px;
+  color: white;
+  font-size: 14pt;
+}
+
+.restaurants-input {
+  line-height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 0 8px;
+  color: #666;
+  width: 400px;
+  margin-bottom: 30px;
+}
+
+// restaurant scroll
+.restaurant_scroll .p-scrollpanel-wrapper {
+  border-right: 9px solid #f4f4f4;
+}
+
+.restaurant_scroll .p-scrollpanel-bar {
+  background-color: #1976d2;
+  opacity: 1;
+  transition: background-color .3s;
+}
+
+.restaurant_scroll .p-scrollpanel-bar:hover {
+  background-color: #135ba1;
+}
