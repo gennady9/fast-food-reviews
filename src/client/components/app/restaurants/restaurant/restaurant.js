@@ -6,7 +6,6 @@ import RestaurantActions from "./actions";
 import Review from "../review/review";
 import {ReviewConstants} from "../review/constants";
 import {ReviewWidget} from "../../review-widget/review-widget";
-import Form from "react-bootstrap/es/Form";
 
 class Restaurant extends React.Component {
   componentDidMount() {
