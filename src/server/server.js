@@ -12,8 +12,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 
 const config = {
-  mongoURL: process.env.MONGO_URL || 'mongodb://localhost:27017/reviews',
-  port: 8000
+  mongoURL: process.env.MONGODB_URI || 'mongodb://localhost:27017/reviews',
+  port: process.env.port || 8000
 };
 
 //setup database

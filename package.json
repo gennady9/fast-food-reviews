@@ -5,7 +5,8 @@
   "main": "",
   "scripts": {
     "dev": "webpack-dev-server",
-    "start": "webpack"
+    "postinstall": "webpack -p",
+    "start": "node server/server.js"
   },
   "repository": "",
   "keywords": [],
