@@ -1,5 +1,6 @@
 {
-  "name":"fast-food-reviews",
+  "homepage":"https://github.com/gennady9/fast-food-review",
+  "name": "fast-food-reviews",
   "private": true,
   "version": "1.0.0",
   "description": "Fast food reviews",
@@ -10,7 +11,9 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "postinstall": "webpack -p",
-    "start": "node src/server/server.js"
+    "start": "node src/server/server.js",
+    "predeploy": "webpack -p",
+    "deploy": "gh-pages -d build"
   },
   "repository": "",
   "keywords": [],
@@ -38,6 +41,7 @@
     "eslint-loader": "^2.2.1",
     "eslint-plugin-react": "^7.20.5",
     "file-loader": "^3.0.1",
+    "gh-pages": "^3.1.0",
     "gh-pages-deploy": "^0.5.1",
     "glob": "^7.1.6",
     "isparta-instrumenter-loader": "^1.0.1",
