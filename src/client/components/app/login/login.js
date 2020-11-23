@@ -3,7 +3,6 @@ import connect from "react-redux/es/connect/connect";
 import {Form, Button, Col, Row, Card} from 'react-bootstrap';
 import './login.scss';
 import LoginActions from "./actions";
-import { Route, Redirect } from 'react-router'
 
 class Login extends React.Component {
   componentDidMount() {

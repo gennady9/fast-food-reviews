@@ -1,5 +1,3 @@
-import {ReviewConstants} from "./components/app/restaurants/review/constants";
-
 const {Map, List} = require('immutable');
 
 export default {

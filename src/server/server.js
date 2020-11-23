@@ -32,16 +32,23 @@ app.use(bodyParser.urlencoded({extended: false})); //handle body requests
 app.use(cookieParser());
 
 //-----
+
+// app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../dist')));
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../../dist'))
-// })
-//-----
+
 
 // Add backend api routes
 fs.readdirSync(__dirname + '/api').forEach((file) => {
   require(`./api/${file.substr(0, file.indexOf('.'))}`)(app);
 });
+
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, '../../dist/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
 
 app.use(function (err, msg, req, res, next) {
   console.log("route not found..");
