@@ -29,5 +29,7 @@ Temporary Items
 
 .idea
 node_modules
+.env
 
 uploads/*
+
