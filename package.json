@@ -12,7 +12,6 @@
     "dev": "webpack-dev-server",
     "postinstall": "webpack -p",
     "build": "webpack -p",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
     "start": "node src/server/server.js",
     "predeploy": "webpack -p"
   },
