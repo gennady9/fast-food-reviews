@@ -31,24 +31,24 @@ const config = {
 // const mongoose = require('mongoose');
 
 
-const connection = "mongodb+srv://gennady9:45214521@cluster0.mng8u.mongodb.net/fast-food-reviews?retryWrites=true&w=majority";
-mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
-    .then(() => console.log("Database Connected Successfully"))
-    .catch(err => console.log(err));
+// const connection = "mongodb+srv://gennady9:45214521@cluster0.mng8u.mongodb.net/fast-food-reviews?retryWrites=true&w=majority";
+// mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+//     .then(() => console.log("Database Connected Successfully"))
+//     .catch(err => console.log(err));
 
-// mongoose.Promise = global.Promise;
-// // MongoDB Connection
-// if (process.env.NODE_ENV !== 'test') {
-//   mongoose.connect(config.mongoURL, {useNewUrlParser: true}, (error) => {
+mongoose.Promise = global.Promise;
+// MongoDB Connection
+if (process.env.NODE_ENV !== 'test') {
+  mongoose.connect(config.mongoURL, {useNewUrlParser: true}, (error) => {
 
-//     if (error) {
-//       console.error('Please make sure Mongodb is installed and running!');
-//       throw error;
-//     } else {
-//       console.log('connected to database!');
-//     }
-//   });
-// }
+    if (error) {
+      console.error('Please make sure Mongodb is installed and running!');
+      throw error;
+    } else {
+      console.log('connected to database!');
+    }
+  });
+}
 
 const app = express();
 
