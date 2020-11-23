@@ -4,6 +4,7 @@
   font-family: sans-serif;
 }
 
+
 .container > p {
   font-size: 1rem;
 }
@@ -44,4 +45,10 @@
   border:4px solid black;
   background-color:white;
   padding:20px;
+  margin: 80px 0px;
+
+  .formButton {
+    display: block;
+    margin: 0 auto;
+  }
 }

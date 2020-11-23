@@ -3,6 +3,7 @@ import connect from "react-redux/es/connect/connect";
 import {Form, Button, Col, Row, Card} from 'react-bootstrap';
 import './login.scss';
 import LoginActions from "./actions";
+import { Route, Redirect } from 'react-router'
 
 class Login extends React.Component {
   componentDidMount() {
@@ -22,6 +23,7 @@ class Login extends React.Component {
     return (
     <div className="loginForm">
     <Form onSubmit={this.handleSubmit}>
+      <Form.Text as="h1" style={{textAlign: "center"}}>Login</Form.Text>
       <Form.Group controlId="formUsername">
         <Form.Label>Username</Form.Label>
         <Form.Control type="text"
@@ -33,8 +35,8 @@ class Login extends React.Component {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" value={password} onChange={this.onChangePassword}/>
       </Form.Group>
-      <Button variant="primary" type="submit" {...(userTaken && {disabled: true})}>
-        Submit
+      <Button variant="primary" className="formButton" type="submit" {...(userTaken && {disabled: true})}>
+        Login
       </Button>
     </Form>
     </div>
@@ -49,6 +51,10 @@ class Login extends React.Component {
           Please use the link below to go to the site.
         </Card.Text>
         <Button variant="primary" href="/">Go to main page</Button>
+        {/* window.location.reload();  */}
+        
+        {/* <Redirect to ="/"/> */}
+        {/* { window.location.reload()  } */}
       </Card.Body>
     </Card>);
   };
@@ -67,14 +73,10 @@ class Login extends React.Component {
   render() {
     const {completed, error} = this.props;
     return (
-      <Row>
-        <Col></Col>
-        <Col xs={6}>
+        <div className="container col-md-6">
           {error ? this.renderErrorMessage() : null}
           {completed ? this.renderCompleteMessage() : this.renderForm()}
-        </Col>
-        <Col></Col>
-      </Row>
+        </div>
     );
   }
 }

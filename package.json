@@ -1,5 +1,5 @@
 {
-  "homepage":"https://github.com/gennady9/fast-food-review",
+  "homepage": "https://github.com/gennady9/fast-food-review",
   "name": "fast-food-reviews",
   "private": true,
   "version": "1.0.0",
@@ -11,9 +11,10 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "postinstall": "webpack -p",
+    "build": "webpack -p",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
     "start": "node src/server/server.js",
-    "predeploy": "webpack -p",
-    "deploy": "gh-pages -d build"
+    "predeploy": "webpack -p"
   },
   "repository": "",
   "keywords": [],
@@ -60,6 +61,7 @@
     "mocha": "^6.2.3",
     "moxios": "^0.4.0",
     "node-sass": "^4.14.1",
+    "nodemon": "^2.0.6",
     "null-loader": "^2.0.0",
     "open": "6.3.0",
     "phantomjs-prebuilt": "^2.1.16",

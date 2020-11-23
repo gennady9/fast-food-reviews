@@ -4,14 +4,13 @@ import {Form, Button, Col, Row, Card} from 'react-bootstrap';
 import Dropzone from 'react-dropzone';
 import './register.scss';
 import RegisterActions from "./actions";
-import 'react-geosuggest/module/geosuggest.css';
 
+import 'react-geosuggest/module/geosuggest.css';
 import Geosuggest from 'react-geosuggest';
 
 
 class Register extends React.Component {
   componentDidMount() {
-    // this.props.loadCountries();
   }
 
   handleSubmit = (event) => {
@@ -47,6 +46,7 @@ class Register extends React.Component {
     return (
     <div className="registerForm">
       <Form onSubmit={this.handleSubmit} encType="multipart/form-data">
+      <Form.Text as="h1" style={{textAlign: "center"}}>Register</Form.Text>
       <Form.Group controlId="formUsername">
         <Form.Label>Username</Form.Label>
         <Form.Control type="text"
@@ -95,8 +95,8 @@ class Register extends React.Component {
           }
         </Dropzone>
       </Form.Group>
-      <Button variant="primary" type="submit" {...(userTaken || location == null && {disabled: true})}>
-        Submit
+      <Button variant="primary" className="formButton" type="submit" style={{alignItem:"center"}} {...(userTaken || location == null && {disabled: true})}>
+        Register
       </Button>
     </Form>
   </div>
@@ -129,14 +129,10 @@ class Register extends React.Component {
   render() {
     const {completed, error} = this.props;
     return (
-      <Row>
-        <Col></Col>
-        <Col xs={6}>
+      <div className="container col-md-6">
           {error ? this.renderErrorMessage() : null}
           {completed ? this.renderCompleteMessage() : this.renderForm()}
-        </Col>
-        <Col></Col>
-      </Row>
+      </div>
     );
   }
 }
@@ -150,7 +146,6 @@ const mapStateToProps = (state) => {
     userTaken: state['register'].get('userTaken'),
     completed: state['register'].get('completed'),
     error: state['register'].get('error'),
-    // countries: state['register'].get('countries')
   }
 };
 
@@ -159,7 +154,6 @@ const mapDispatchToProps = (dispatch) => {
     onChangeValue: (name, value) => dispatch(RegisterActions.changeValue(name, value)),
     checkIsUsernameFree: (username) => dispatch(RegisterActions.checkUserExists(username)),
     registerUser: () => dispatch(RegisterActions.registerUser()),
-    // loadCountries: () => dispatch(RegisterActions.loadCountries())
   }
 };
 

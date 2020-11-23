@@ -2,11 +2,9 @@ import React from 'react';
 import './app.scss';
 import {connect} from 'react-redux';
 import {Navbar, Nav, NavDropdown, Col, Row, Image, Container} from 'react-bootstrap';
-import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Link, Switch, Redirect} from "react-router-dom";
 import {LinkContainer} from 'react-router-bootstrap'
 import AppActions from './actions';
-import {Button} from 'primereact/button';
-import {Dropdown} from 'primereact/dropdown';
 import withAuth from './with-auth';
 import Register from './register/register';
 import Login from './login/login';
@@ -29,6 +27,10 @@ class App extends React.Component {
   }
 
   isAuthenticated = () => this.props.username != null && this.props.username != '';
+  handleLogout = () => {
+    
+    this.props.logout();
+  }
 
   renderUserDropdownMenu = () => (
     <div>
@@ -36,7 +38,7 @@ class App extends React.Component {
         <LinkContainer key={1} to={`/profiles/${this.props.userId}`}>
           <NavDropdown.Item>Profile</NavDropdown.Item>
         </LinkContainer>
-        <NavDropdown.Item onClick={this.props.logout}>Logout</NavDropdown.Item>
+        <NavDropdown.Item onClick={this.handleLogout}>Logout</NavDropdown.Item>
       </NavDropdown></Nav>
     </div>);
 
@@ -71,6 +73,7 @@ class App extends React.Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
+                {/* { this.renderMenu() } */}
                 {this.isAuthenticated() ? this.renderMenu() : null}
               </Nav>
               {this.isAuthenticated() ? this.renderUserDropdownMenu() : this.renderGuestDropdownMenu()}
@@ -93,7 +96,7 @@ class App extends React.Component {
     );
   }
 }
-
+// 
 const mapStateToProps = (state) => {
   return {
     username: state['app'].get('username'),
