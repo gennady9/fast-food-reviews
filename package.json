@@ -9,7 +9,7 @@
     "node": "12.x"
   },
   "scripts": {
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server --port 3000 --config ./webpack.config.js",
     "build": "webpack -p",
     "start": "node src/server/server.js"
   },

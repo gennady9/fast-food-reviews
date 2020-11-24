@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const outputDirectory = 'dist';
 
@@ -41,14 +40,24 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   },
   devServer: {
-    port: 8000,
-    open: true,
+    proxy: {
+      '/api': {
+          target: 'http://localhost:8000',
+          secure: false
+      }
+    },
+    port: 3000,
+    //open: true,
+    contentBase: 'public',
+    hot: true,
+    publicPath: '/',
     historyApiFallback: true
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/favicon.ico'
+      favicon: './public/favicon.ico',
+      inject: true
     })
   ]
 };

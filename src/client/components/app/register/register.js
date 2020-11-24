@@ -32,7 +32,8 @@ class Register extends React.Component {
     this.props.onChangeValue('username', event.target.value)
   };
   onChangePassword = event => this.props.onChangeValue('password', event.target.value);
-  onChangeLocation = value => this.props.onChangeValue('location', value ? {label: value.label, location: value.location} : null);
+  // onChangeLocation = value => this.props.onChangeValue('location', value ? {label: value.label, location: value.location} : null);
+  onChangeLocation = event => this.props.onChangeValue('location', event.target.value);
   onChangePicture = file => this.props.onChangeValue('picture', file);
 
   showUsernameIndicator = () => this.props.userTaken ? (<Form.Text className="text-danger">
@@ -64,7 +65,8 @@ class Register extends React.Component {
       </Form.Group>
       <Form.Group controlId="formLocation">
         <Form.Label>Location</Form.Label>
-        <Geosuggest onSuggestSelect={this.onChangeLocation} onChange={() =>this.onChangeLocation(null)} />
+        <Form.Control type="text" placeholder="Enter location" value={location} onChange={this.onChangeLocation}/>
+        {/* <Geosuggest onSuggestSelect={this.onChangeLocation} onChange={() =>this.onChangeLocation(null)} /> */}
       </Form.Group>
       <Form.Group controlId="formPicture">
         <Form.Label>Picture</Form.Label>
