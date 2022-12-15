@@ -92,7 +92,7 @@
     "dotenv": "^8.2.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-plugin-jsx-a11y": "^6.3.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "geolib": "^3.3.1",
     "html-webpack-plugin": "^3.2.0",
     "immutable": "^4.0.0-rc.12",
