@@ -58,7 +58,7 @@
     "mocha": "^6.2.3",
     "moxios": "^0.4.0",
     "node-sass": "^4.14.1",
-    "nodemon": "^2.0.6",
+    "nodemon": "^2.0.20",
     "null-loader": "^2.0.0",
     "open": "6.3.0",
     "phantomjs-prebuilt": "^2.1.16",
